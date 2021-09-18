@@ -1,9 +1,22 @@
+import React, {useEffect} from "react";
 import Head from "next/head";
 import PageHeader from "../components/pageheader";
 import Navbar from "../components/navbar";
 import "../styles/index.css";
 
 function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    const div = document.querySelector('.menuVerticalParent');
+    window.onscroll = function() {
+        var top = window.scrollY;
+    
+        if (top >= 50) {
+            div.classList.add('active')
+        } else {
+            div.classList.remove('active')
+        }
+    }
+  }, [])
   return (
     <>
       <Head>
@@ -32,5 +45,16 @@ function MyApp({ Component, pageProps }) {
     </>
   );
 }
+
+// const div = document.querySelector('.menuVerticalParent');
+// window.onscroll = function() {
+//     var top = window.scrollY;
+
+//     if (top >= 50) {
+//         div.classList.add('active')
+//     } else {
+//         div.classList.remove('active')
+//     }
+// }
 
 export default MyApp;

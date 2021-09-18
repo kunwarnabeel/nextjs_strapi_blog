@@ -3,6 +3,7 @@ import React from 'react'
 export default function MainContent() {
     return (
         <>
+            <section className="middleContent" id="middleContent">
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-md-12 pr-md-0 col-lg-12 col-xl-8">
@@ -144,6 +145,7 @@ myLogModule.info(<span className="str ">'Node.js started'</span>);
                     </div>
                 </div>
             </div>
+            </section>
         </>
     )
 }
